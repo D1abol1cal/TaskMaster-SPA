@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/TaskMaster-SPA.iml" filepath="$PROJECT_DIR$/.idea/TaskMaster-SPA.iml" />
+      <module fileurl="file://$PROJECT_DIR$/taskmasterfrontend/taskmasterfrontend.iml" filepath="$PROJECT_DIR$/taskmasterfrontend/taskmasterfrontend.iml" />
     </modules>
   </component>
 </project>
