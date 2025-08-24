@@ -4,6 +4,7 @@ import {Project} from './project/project';
 
 @Component({
   selector: 'app-root',
+  standalone: true,
   imports: [RouterOutlet, Project],
   templateUrl: './app.html',
   styleUrl: './app.css'

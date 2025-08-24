@@ -1,10 +1,8 @@
-import {Task} from './task.model';
+import { Task } from './task.model';
 
 export interface Project {
-
   id: number;
-  name :string;
+  name: string;
   description: string;
-  tasks: Task[]; //Array<Task>
-
+  tasks: Task[]; // Array<Task>
 }

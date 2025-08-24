@@ -5,14 +5,9 @@ import {ProgressBar} from './progress-bar/progress-bar';
 
 @Component({
   selector: 'app-project',
-  imports: [
-    ProjectTitle,
-    TaskList,
-    ProgressBar
-  ],
+  standalone: true,
+  imports: [TaskList, ProgressBar, ProjectTitle],
   templateUrl: './project.html',
-  styleUrl: './project.css'
+  styleUrl: './project.css',
 })
-export class Project {
-
-}
+export class Project {}

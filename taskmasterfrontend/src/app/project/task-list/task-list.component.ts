@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { Task } from '../../task.model';
 import { AsyncPipe, DatePipe } from '@angular/common';
 import { TaskService } from '../../task.service';
-import { TaskForm } from '../task-form/task-form';
+import { TaskFormComponent } from '../task-form/task-form.component';
 import { Observable } from 'rxjs';
 
 const emptyTask = {
@@ -17,11 +17,11 @@ const emptyTask = {
 @Component({
   selector: 'app-task-list',
   standalone: true,
-  imports: [DatePipe, TaskForm, AsyncPipe],
-  templateUrl: './task-list.html',
-  styleUrl: './task-list.css',
+  imports: [DatePipe, TaskFormComponent, AsyncPipe],
+  templateUrl: './task-list.component.html',
+  styleUrl: './task-list.component.css',
 })
-export class TaskList {
+export class TaskListComponent {
   tasks: Task[] = [];
   showModal: boolean = false;
   formType: 'CREATE' | 'UPDATE' = 'CREATE';
