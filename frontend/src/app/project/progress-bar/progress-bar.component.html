@@ -1,0 +1,11 @@
+@if (progress$ | async; as progress) {
+<div class="progress-container">
+	<div class="progress-label">
+		<span>Progress</span>
+		<span class="progress-percentage">{{ progress }}%</span>
+	</div>
+	<div class="progress-bar">
+		<div class="progress-bar-fill" [style.width.%]="progress"></div>
+	</div>
+</div>
+}

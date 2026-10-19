@@ -1,0 +1,52 @@
+<div class="task-list-container">
+	<div class="heading">
+		<h3>Tasks</h3>
+
+		<div>
+			<span class="status-dot in-progress"></span>In Progress
+			<span class="status-dot completed"></span>Completed
+		</div>
+	</div>
+	<table>
+		<thead>
+			<tr>
+				<th>Task</th>
+				<th>Status</th>
+				<th>Due date</th>
+				<th></th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			@for(task of tasks$ | async; track task.id) {
+			<tr>
+				<td>
+					<label class="{{ task.completed ? 'completed-task' : '' }}">
+						<input type="checkbox" aria-label="Select task" [checked]="task.completed"
+							(change)="toggleCompleted(task)" />{{ task.name }}
+					</label>
+				</td>
+				<td>
+					<span class="status-dot {{ task.completed ? 'completed' : 'in-progress' }}"></span>{{ task.completed ?
+					'Completed' : 'In Progress' }}
+				</td>
+				<td>{{task.dueDate | date:"yyyy-MM-dd"}}</td>
+				<td><button class="icon-button" title="Edit task" aria-label="Edit task" (click)="editTask(task)">✏️</button></td>
+				<td><button class="icon-button" title="Delete task" aria-label="Delete task" (click)="deleteTask(task.id)">❌</button></td>
+			</tr>
+			} @empty {
+			<tr>
+				<td colspan="5" class="empty-state">No tasks yet. Add one to get started.</td>
+			</tr>
+			}
+		</tbody>
+	</table>
+
+	<div class="button-container">
+		<button (click)="addNewTask()">Add New Task</button>
+	</div>
+	@if(showModal) {
+	<app-task-form (closePanel)="handleModalClose()" [currentTask]="selectedTask"
+		[formType]="formType"></app-task-form>
+	}
+</div>
